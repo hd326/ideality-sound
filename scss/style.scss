@@ -85,7 +85,7 @@ header {
     letter-spacing: 1px;
     font-size: 24px;
     position: relative;
-    border-bottom: 3px solid $blue;
+    //border-top: 3px solid $blue;
 
     ul li.categories {
         font-weight: 500;
@@ -307,37 +307,41 @@ footer {
         }
 
         .footer-content-sec:nth-of-type(2) {
-            .comment {
-                padding: 25px;
-                font-size: 25px;
-            }
+            #footer-comments {
+                .comment {
+                    padding: 25px;
+                    font-size: 25px;
+                }
 
-            .comment-info {}
+                .comment-details {
+                    
+                }
 
-            .comment-number {
-                font-style: italic;
-            }
+                .comment-number {
+                    font-style: italic;
+                }
 
-            .comment-name {
-                margin-left: 25px;
-                margin-top: -32.5px;
-                font-size: 14px;
-            }
+                .comment-name {
+                    margin-left: 25px;
+                    margin-top: -32.5px;
+                    font-size: 14px;
+                }
 
-            .comment-thread {
-                margin-left: 25px;
-                font-family: "Lato";
-                font-size: 14px;
-                text-decoration: underline;
-            }
+                .comment-thread {
+                    margin-left: 25px;
+                    font-family: "Lato";
+                    font-size: 14px;
+                    text-decoration: underline;
+                }
 
-            .comment-text {
-                font-family: "Lato";
-                font-style: italic;
-                font-size: 14px;
-                border: 1px solid #3b3b3b;
-                padding: 7.5px;
-                margin-top: 20px;
+                .comment-text {
+                    font-family: "Lato";
+                    font-style: italic;
+                    font-size: 14px;
+                    border: 1px solid #3b3b3b;
+                    padding: 7.5px;
+                    margin-top: 20px;
+                }
             }
         }
     }
@@ -391,8 +395,14 @@ footer {
     #review {
         width: 100%;
 
-        p:nth-of-type(1) {
+        h2 {
             margin-top: 50px;
+            text-transform: uppercase;
+            font-family: "Oswald";
+        }
+
+        p:nth-of-type(1) {
+            margin-top: 20px;
 
         }
 
@@ -400,7 +410,8 @@ footer {
             font-family: "Lato";
             margin-top: 20px;
             text-align: justify;
-            letter-spacing: .25px
+            letter-spacing: .25px;
+            color: #555555;
         }
 
         nav ul li {
@@ -439,30 +450,184 @@ footer {
     }
 }
 
-#previous-next{
+#specific-rating {
+    background-color: #f0f0f0;
+    margin-top: 20px;
+    padding: 20px;
+    padding-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    text-align:center;
+    grid-gap: 25px;
+
+    span {
+        letter-spacing: 2px;
+        font-weight: 1000;
+        font-size: 13px;
+    }
+
+    .specific-rating-grey {
+        width: 100%;
+        background-color: #ffffff;
+        height: 8px;
+        border-radius: 1px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+
+        .specific-rating-actual {
+            background-color: $blue;
+            height: 8px;
+            border-radius: 1px;
+            width: 80%;
+        }
+    }
+}
+
+#previous-next {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
     grid-gap: 20px;
     margin-top: 50px;
     height: 100%;
     font-family: "Oswald";
     letter-spacing: 1px;
-    i{
+    height: 125px;
+
+    i {
         font-size: 36px;
     }
-    #previous{
+
+    #previous {
         background-color: #e0e0e0;
-        display:grid;
-        align-content:center;
-        height: 125px;
-         color: #9a9a9a;
-    }
-    #next{
-        background-color: #e0e0e0;
-        display:grid;
-        align-content:center;
+        display: grid;
+        align-content: center;
         color: #9a9a9a;
+    }
+
+    #next {
+        background-color: #e0e0e0;
+        display: grid;
+        align-content: center;
+        color: #9a9a9a;
+    }
+}
+
+#related-articles {
+
+    #related-articles-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 20px;
+        padding: 0px;
+        font-family: "Oswald";
+
+        .related-articles-column {
+            width: 100%;
+            display: grid;
+
+            img {
+                width: 100%;
+                margin-top: 25px;
+                justify-self: center;
+            }
+
+            p.related-date {
+                font-family: "Oswald";
+                color: #afafaf;
+                text-align: center;
+
+            }
+
+            h3 {
+                text-align: center;
+                font-weight: 100;
+            }
+        }
+    }
+}
+
+#comments {
+    #number-comments {
+        font-family: "Oswald";
+        color: #959595;
+        text-transform: uppercase;
+        font-size: 24px;
+        letter-spacing: 2px;
+    }
+
+    hr#number-comments-divider {
+        border-top: 5px solid #afafaf;
+        margin-top: 5px;
+    }
+
+    hr {
+        margin-top: 30px;
+        border-top: 1px;
+    }
+
+    .comment {
+        .comment-info {
+            display: grid;
+            grid-template-columns: .075fr 1fr;
+            margin-top: 25px;
+
+            .comment-column:nth-of-type(2) {
+                letter-spacing: 2px;
+                font-family: "Oswald";
+
+                .date {
+                    color: #afafaf;
+                }
+
+                .name {
+                    color: #2b2b2b;
+                }
+            }
+        }
+
+        .comment-actual {
+            margin-left: 60px;
+            margin-top: 20px;
+        }
+    }
+}
+
+#leave-a-reply {
+    text-transform: uppercase;
+    font-family: "Oswald";
+    color: #959595;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin-top: 75px;
+
+    hr#leave-a-reply-divider {
+        border-top: 5px solid #afafaf;
+        margin-top: 5px;
+    }
+
+    textarea {
+        width: 100%;
+        height: 175px;
+        margin-top: 7.5px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+    }
+
+    button {
+        border: 2px solid #afafaf;
+        padding: 12.5px 40px;
+        font-family: "Oswald";
+        text-transform: uppercase;
+        margin-top: 35px;
+        background-color: #f2f2f2;
+        color: #afafaf;
     }
 }
 
