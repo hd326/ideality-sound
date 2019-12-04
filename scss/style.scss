@@ -1,11 +1,30 @@
+@mixin mQ($arg...) {
+    @if (length($arg)==1) {
+        @media screen and (max-width: nth($arg, 1)) {
+            @content;
+        }
+    }
+
+    @if (length($arg)==2) {
+        @media screen and (max-width: nth($arg, 1)) and (min-width: nth($arg, 2)) {
+            @content;
+        }
+    }
+}
+
 $blue: #006cff;
 $yellow: #EB9812;
 $teal: #00d8ff;
+$inputHeight: 40px;
+$columnGap: 30px;
+$offGrey: #ececec;
+$darkOffGrey: #bebebe;
+$offBlack: #2b2b2b;
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
@@ -15,6 +34,19 @@ body {
     //box-shadow: -1px 2px 10px 10px #bfbfbf;
 }
 
+@include mQ(1280px) {
+    body {
+        width: 980px;
+    }
+}
+
+@include mQ(1060px) {
+    body {
+        width: 760px;
+    }
+}
+
+
 #logo {
     padding-top: 50px;
     margin-bottom: 25px;
@@ -23,6 +55,7 @@ body {
     text-indent: 20px;
     font-size: 20px;
     text-align: center;
+    letter-spacing: 1px;
     //span:nth-of-type(1){
     //    background-color: $blue;
     //    color: #f2f2f2;
@@ -37,11 +70,12 @@ body {
     display: grid;
     justify-content: flex-end;
     background-color: #2b2b2b;
-    color: #bebebe;
+    color: $offGrey;
 
     nav ul li {
         display: inline;
         padding: 15px;
+
 
         &:nth-of-type(5) {
             padding: 0px;
@@ -64,7 +98,7 @@ body {
             background-color: black;
             border: none;
             width: 150px;
-            color: #bebebe;
+            color: $offGrey;
         }
     }
 }
@@ -160,22 +194,36 @@ header {
     display: grid;
     justify-content: flex-end;
     font-family: "Oswald";
-    padding: 5px 0px;
-    background-color: #cccccc;
+    padding: px 0px;
+    background-color: #e7e7e7;
 
-    nav ul {
-        margin-right: 15px;
-    }
+    nav ul {}
 
     nav ul li {
         display: inline-block;
         list-style: none;
-        margin-left: 20px;
-        color: #6c6c6c;
+        padding: 10px 10px;
+        color: #868686;
+        font-size: 12px;
+        transition: .5s ease;
+        margin-left: -3.75px;
+        a{
+            width: 100%;
+            height: 100%;
+            text-decoration:none;
+            color: #868686;
+            padding: 10px 12.5px;
+            margin-left: -3.75px;
+        }
+
+        &:hover {
+            background-color: black;
+            color: #f2f2f2;
+        }
     }
 }
 
-#ad-placement {
+#sponsor-placement {
     width: 90%;
     margin: auto;
     margin-top: 20px;
@@ -202,6 +250,11 @@ header {
     color: grey;
     text-align: center;
     display: grid;
+
+    a {
+        text-decoration: none;
+        color: #2b2b2b;
+    }
 
     hr {
         color: black;
@@ -313,9 +366,7 @@ footer {
                     font-size: 25px;
                 }
 
-                .comment-details {
-                    
-                }
+                .comment-details {}
 
                 .comment-number {
                     font-style: italic;
@@ -347,6 +398,8 @@ footer {
     }
 }
 
+// begin the review page
+
 #review-image {
     width: 100%;
     position: relative;
@@ -368,7 +421,7 @@ footer {
 
         h1 {
             letter-spacing: 2px;
-            color: #4a4a4a;
+            color: #2b2b2b;
         }
 
         img {
@@ -549,14 +602,15 @@ footer {
 #comments {
     #number-comments {
         font-family: "Oswald";
-        color: #959595;
+        color: #2b2b2b;
         text-transform: uppercase;
         font-size: 24px;
         letter-spacing: 2px;
+        margin-top: 50px;
     }
 
     hr#number-comments-divider {
-        border-top: 5px solid #afafaf;
+        border-top: 5px solid #2b2b2b;
         margin-top: 5px;
     }
 
@@ -595,13 +649,13 @@ footer {
 #leave-a-reply {
     text-transform: uppercase;
     font-family: "Oswald";
-    color: #959595;
+    color: #2b2b2b;
     font-size: 24px;
     letter-spacing: 2px;
     margin-top: 75px;
 
     hr#leave-a-reply-divider {
-        border-top: 5px solid #afafaf;
+        border-top: 5px solid #2b2b2b;
         margin-top: 5px;
     }
 
@@ -632,10 +686,142 @@ footer {
 }
 
 #sponsors {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
 
     .sponsor {
-        height: 35%
+        height: 35%;
+    }
+}
+
+// begin the contact page
+
+#contact-us-header {
+    font-family: "Oswald";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 25px;
+    color: #2b2b2b;
+    background-color: $offGrey;
+    padding: 15px;
+    border-bottom: 5px solid $blue;
+    letter-spacing: 2px;
+}
+
+#contact-us-split {
+    display: grid;
+    grid-template-columns: .75fr .25fr;
+    grid-gap: $columnGap;
+    .contact-us-column {
+        margin-top: 50px;
+    
+        input {
+            width: 300px;
+            height: $inputHeight;
+            margin-top: 10px;
+        }
+    
+        p {
+            margin-top: 20px;
+            font-family: "Oswald";
+            font-size: 16px;
+        }
+    
+        p#feel-free{
+            font-family: "Lato";
+            margin-bottom: 50px;
+        }
+    
+        textarea {
+            width: 600px;
+            margin-top: 10px;
+            height: 200px;
+        }
+        button{
+            border: 2px solid #afafaf;
+            padding: 12.5px 40px;
+            font-family: "Oswald";
+            text-transform: uppercase;
+            margin-top: 35px;
+            background-color: #f2f2f2;
+            color: #2b2b2b;
+        }
+    }
+
+    .contact-us-column:nth-of-type(2){
+        #sponsors {
+            margin-top: 20px;
+            text-align: center;
+        
+            .sponsor {
+                height: 250px;
+            }
+        }
+    }
+}
+
+// begin the about us page
+
+#about-us-header {
+    font-family: "Oswald";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 25px;
+    color: #2b2b2b;
+    background-color: $offGrey;
+    padding: 15px;
+    border-bottom: 5px solid $blue;
+    letter-spacing: 2px;
+}
+
+#about-us-split {
+    display: grid;
+    grid-template-columns: .75fr .25fr;
+    grid-gap: $columnGap;
+    .about-us-column {
+        margin-top: 50px;
+    
+        input {
+            width: 300px;
+            height: $inputHeight;
+            margin-top: 10px;
+        }
+    
+        p {
+            margin-top: 20px;
+            font-family: "Oswald";
+            font-size: 16px;
+        }
+    
+        p#feel-free{
+            font-family: "Lato";
+            margin-bottom: 50px;
+        }
+    
+        textarea {
+            width: 600px;
+            margin-top: 10px;
+            height: 200px;
+        }
+        button{
+            border: 2px solid #afafaf;
+            padding: 12.5px 40px;
+            font-family: "Oswald";
+            text-transform: uppercase;
+            margin-top: 35px;
+            background-color: #f2f2f2;
+            color: #2b2b2b;
+        }
+    }
+
+    .about-us-column:nth-of-type(2){
+        #sponsors {
+            margin-top: 20px;
+            text-align: center;
+        
+            .sponsor {
+                height: 250px;
+            }
+        }
     }
 }
