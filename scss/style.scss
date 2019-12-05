@@ -20,6 +20,8 @@ $columnGap: 30px;
 $offGrey: #ececec;
 $darkOffGrey: #bebebe;
 $offBlack: #2b2b2b;
+$afterHeadingStrip: 50px;
+$padContent: 37.5px;
 
 * {
     margin: 0;
@@ -31,7 +33,7 @@ body {
     width: 1200px;
     margin: auto;
     font-family: "Lato";
-    //box-shadow: -1px 2px 10px 10px #bfbfbf;
+    //box-shadow: -1px 2px 10px 7.5px #bfbfbf;
 }
 
 @include mQ(1280px) {
@@ -52,9 +54,9 @@ body {
     margin-bottom: 25px;
     color: #2b2b2b;
     text-transform: uppercase;
-    text-indent: 20px;
+    text-indent: 37.5px;
     font-size: 20px;
-    text-align: center;
+    //text-align: center;
     letter-spacing: 1px;
     //span:nth-of-type(1){
     //    background-color: $blue;
@@ -119,7 +121,7 @@ header {
     letter-spacing: 1px;
     font-size: 24px;
     position: relative;
-    //border-top: 3px solid $blue;
+    border-top: 3px solid $blue;
 
     ul li.categories {
         font-weight: 500;
@@ -130,7 +132,10 @@ header {
         position: relative;
         transition: .25s ease;
         z-index: 2;
-
+        a{
+            text-decoration:none;
+            color: #f2f2f2;
+        }
         &:nth-of-type(1) {
             margin-left: 0px;
             //background-color: #006cff;
@@ -233,11 +238,12 @@ header {
 }
 
 
-#container {
+#main-page-content {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 25px;
     margin-top: 25px;
+    padding: 37.5px;
 }
 
 
@@ -331,6 +337,7 @@ header {
 }
 
 footer {
+    width: 100% !important;
     margin-top: 25px;
     border-top: 20px solid #2b2b2b;
     background-color: #2b2b2b;
@@ -447,6 +454,7 @@ footer {
 
     #review {
         width: 100%;
+        padding-left: 37.5px;
 
         h2 {
             margin-top: 50px;
@@ -713,7 +721,8 @@ footer {
     grid-template-columns: .75fr .25fr;
     grid-gap: $columnGap;
     .contact-us-column {
-        margin-top: 50px;
+        margin-top: $afterHeadingStrip;
+        padding-left: $padContent;
     
         input {
             width: 300px;
@@ -779,7 +788,14 @@ footer {
     grid-template-columns: .75fr .25fr;
     grid-gap: $columnGap;
     .about-us-column {
+        h2{
+            font-family: "Oswald";
+        }
+        h2:nth-of-type(2){
+            margin-top: 20px;
+        }
         margin-top: 50px;
+        padding-left: $padContent;
     
         input {
             width: 300px;
@@ -789,7 +805,7 @@ footer {
     
         p {
             margin-top: 20px;
-            font-family: "Oswald";
+            font-family: "Lato";
             font-size: 16px;
         }
     
@@ -825,3 +841,105 @@ footer {
         }
     }
 }
+
+// begin the privacy page
+
+#privacy-header {
+    font-family: "Oswald";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 25px;
+    color: #2b2b2b;
+    background-color: $offGrey;
+    padding: 15px;
+    border-bottom: 5px solid $blue;
+    letter-spacing: 2px;
+}
+
+#privacy-split {
+    display: grid;
+    grid-template-columns: .75fr .25fr;
+    grid-gap: $columnGap;
+    .privacy-column {
+        h2{
+            font-family: "Oswald";
+        }
+
+        margin-top: 50px;
+        padding-left: $padContent;
+    
+    
+        p {
+            margin-bottom: 20px;
+            font-family: "Lato";
+            font-size: 16px;
+        }
+        ul li{
+            margin-top: 20px;
+        }
+    
+    }
+
+    .privacy-column:nth-of-type(2){
+        #sponsors {
+            margin-top: 20px;
+            text-align: center;
+        
+            .sponsor {
+                height: 250px;
+            }
+        }
+    }
+}
+
+// begin the terms and conditions page
+
+#terms-header {
+    font-family: "Oswald";
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 25px;
+    color: #2b2b2b;
+    background-color: $offGrey;
+    padding: 15px;
+    border-bottom: 5px solid $blue;
+    letter-spacing: 2px;
+}
+
+#terms-split {
+    display: grid;
+    grid-template-columns: .75fr .25fr;
+    grid-gap: $columnGap;
+    .terms-column {
+        h2{
+            font-family: "Oswald";
+            margin-bottom: 7.5px;
+        }
+
+        margin-top: 50px;
+        padding-left: $padContent;
+    
+    
+        p {
+            margin-bottom: 20px;
+            font-family: "Lato";
+            font-size: 16px;
+        }
+        ul li{
+            margin-top: 20px;
+        }
+    
+    }
+
+    .terms-column:nth-of-type(2){
+        #sponsors {
+            margin-top: 20px;
+            text-align: center;
+        
+            .sponsor {
+                height: 250px;
+            }
+        }
+    }
+}
+
