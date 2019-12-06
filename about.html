@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Oswald|Roboto:900&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/e032011ee4.js" crossorigin="anonymous"></script>
     <title></title>
 </head>
@@ -26,9 +26,9 @@
         Login / Register
     </div>
     <div id="logo">
-        <h1><span>ideality</span><span>-sound</span></h1>
+        <h1><i class="fas fa-microphone"></i>&nbsp;<span>ideality</span><span>-sound</span></h1>
     </div>
-    <header>
+<header>
         <nav>
             <ul>
                 <!--<li class="categories">
@@ -56,17 +56,13 @@
                     <a href="index.html">Home</a>
                 </li>
                 <li class="categories">
-                    Sources +
-                    <nav>
-                        <ul>
-                            <li>DAPS</li>
-                            <li>DACS</li>
-                            <li>Streaming</li>
-                        </ul>
-                    </nav>
+                    Reviews
                 </li>
                 <li class="categories">
-                    Headphones +
+                    Blog
+                </li>
+                <li class="categories">
+                    Headphones <i class="caret fas fa-chevron-down fa-1x"></i>
                     <nav>
                         <ul>
                             <li>Full Size</li>
@@ -77,7 +73,18 @@
                     </nav>
                 </li>
                 <li class="categories">
-                    Amplification +
+                    Sources <i class="caret fas fa-chevron-down fa-1x"></i>
+                    <nav>
+                        <ul>
+                            <li>DAPS</li>
+                            <li>DACS</li>
+                            <li>Streaming</li>
+                        </ul>
+                    </nav>
+                </li>
+
+                <li class="categories">
+                    Amplification <i class="caret fas fa-chevron-down fa-1x"></i>
                     <nav>
                         <ul>
                             <li>Portable AMPS</li>
@@ -86,16 +93,19 @@
                         </ul>
                     </nav>
                 </li>
+                <li class="categories">
+                    Best Gear
+                </li>
             </ul>
         </nav>
     </header>
     <div id="about-us-strip">
         <nav>
             <ul>
-                <li><a href="contact.html">CONTACT</a></li>
-                <li><a href="about.html">ABOUT US</a></li>
-                <li><a href="privacy.html">PRIVACY POLICY</a></li>
-                <li><a href="terms.html">TERMS AND CONDITIONS</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Disclaimer/Copyright</a></li>
             </ul>
         </nav>
     </div>
@@ -111,13 +121,12 @@
 
         <div class="about-us-column">
             <h2>Why did this site come into being?</h2>
-            <p>I wanted someday to provide my experiences as an audio / audio gear lover. I discovered my passion for audio equipment in 2014, I decided that there is a lot to talk about in this field, so I would have a take as well. Today, I've had the pleasure of owning a range of equipment that has given me that unique experience as an audiophile. I want to share my joy and excitement that comes with being able to experience the greatness of music and sound. This site is my way of logging detailed reports on my perspective on a variety of topics.
-                For persons with musical taste, I want to provide my own views - and it's to share my experience on an incredible hobby.</p>
+            <p>I wanted someday to provide my experiences as an audio / audio gear lover. I discovered my passion for audio equipment in 2014. I decided that there is a lot to talk about in this field, and so I would have my take as well. I've had the pleasure of owning a range of equipment that, giving me that unique experience as an audiophile that I want to share. I want to share excitement that comes with being able to experience the greatness of music and sound. This website is my way of logging reports on my perspective on a variety of topics, a way to share my experience in an incredible hobby.</p>
 
-            <p>You'll get an honest review from me each time as I try to delve into the nuances of gear. And while there is no such thing as the perfect sound, I want to bring you along my journey. I live for the euphoria that can be experienced when I when listening, and I hope to convey that excitement to visitors.</p>
+            <p>You'll get an honest review from me each time as I try to delve into the nuances of gear. I want to bring you along on my journey, because I live for the euphoria that can be experienced when listening to music, and I hope to convey that excitement to visitors.</p>
 
-        <h2>So what exactly type of sound do you prefer?</h2>
-        <p>I'm a big fan of soundstage, bass, and dynamics in sound. In all though, I'm in search, of nothing in particular, and it's really a path of discovery for me.</p>
+            <h2>So what exactly type of sound do you prefer?</h2>
+            <p>I'm a big fan of soundstage, bass, and dynamics in sound. In all though, I'm in search, of nothing in particular, and it's really a path of discovery for me.</p>
 
         </div>
         <div class="about-us-column">
@@ -128,9 +137,10 @@
             </div>
         </div>
     </div>
-    <footer>
-        <div id="footer-content">
-            <div class="footer-content-sec">
+    <div id="pre-footer">
+       <div id="pre-footer-divider"></div>
+        <div id="pre-footer-container">
+            <div class="pre-footer-col">
                 <h3>TAGS</h3>
                 <div id="tags">
                     <span class="tag">64 audio</span>
@@ -144,7 +154,7 @@
                     <span class="tag">Gustard</span>
                 </div>
             </div>
-            <div class="footer-content-sec">
+            <div class="pre-footer-col">
                 <h3>LATEST COMMENTS</h3>
                 <div id="footer-comments">
                     <div class="comment">
@@ -180,5 +190,24 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <footer>
+        <div class="footer-actual-col">Copyright 2019 <span class="dot">.</span> ideality-sound <span class="dot">.</span> All Rights Reserved</div>
+        <div class="footer-actual-col">
+            <nav>
+                <ul>
+                    <li>Privacy Policy</li>
+                    <li>Contact Us</li>
+                    <li>Disclaimer/Copyright</li>
+                    <li>About</li>
+                    <li><i class="fab fa-youtube"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-facebook"></i></li>
+                </ul>
+            </nav>
+        </div>
+
     </footer>
 </body></html>
